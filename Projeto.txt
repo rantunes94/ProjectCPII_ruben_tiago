@@ -96,10 +96,15 @@ ir a divisao , numero++
 d.setNumEquipamentos(d.getNumEquipamentos()+1);
 ------------------------------------------------
 
+Para adicionar um Funcionario
+Qual a sua funcao?
+		é medico? se for medico funcao==Medico dou-lhe a introduzir especialidade e seccao e depois faco newFuncionarioMedico
 
-
-
-
+		é tecnico?
+		dou-lhe login e pass 
+		newTecnico 
+else
+outroFunc
 
 
 
