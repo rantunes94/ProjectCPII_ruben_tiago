@@ -63,7 +63,7 @@ Dizer que o nif e unico e percorrer um array e ver se ja la esta como fizemos no
 
 
 ----------------------
-
+NAO FAZER AS ESTATISTICAS NA MAIN , ELAS TÊM DE SER FEITAS ONDE TIVEREM AS ARRAY LISTS
 
 Para cada lista
 - adicionar
@@ -71,6 +71,8 @@ Para cada lista
 -obterTodosElementos
 -mostrarTodos
 -pesquisarPorcadaCampoUnico 
--mostrarporumDeterminadoCampo
 
--
+// so para alguns ?
+-mostrarporumDeterminadoCampo
+-eliminarFuncionario
+-calcularEstatisticas
