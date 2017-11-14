@@ -72,7 +72,35 @@ Para cada lista
 -mostrarTodos
 -pesquisarPorcadaCampoUnico 
 
-// so para alguns ?
+// para cada estatistica que tivermos de implementar
 -mostrarporumDeterminadoCampo
 -eliminarFuncionario
 -calcularEstatisticas
+------------------------------
+
+Começar a Implementar :
+
+Gestao : pesquisar por designacao 
+
+
+----------------------------------
+associar divisao a um equipamento  
+
+pedir a designacao da divisao na MAIN( CONSOLA LER STRING , INDIQUE)
+int pos =gestao.pesquisarDivisao(designacao);
+divisao d = gestao.obterDivisao(pos);
+pedir o numero (de equipamento?), verificar se existe , pos=gestao.pesquisarEquipamento(numero);
+equipamento e= gestao.obterEquipamento(pos);
+e.setDivisao(d);
+ir a divisao , numero++
+d.setNumEquipamentos(d.getNumEquipamentos()+1);
+------------------------------------------------
+
+
+
+
+
+
+
+
+
