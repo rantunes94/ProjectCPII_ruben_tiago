@@ -58,3 +58,19 @@ Os Inserir sao parecidos ao Inserir Aluno e Curso
 ----------------------------------
 
 Dizer que o nif e unico e percorrer um array e ver se ja la esta como fizemos no projeto
+
+
+
+
+----------------------
+
+
+Para cada lista
+- adicionar
+-obterElemento
+-obterTodosElementos
+-mostrarTodos
+-pesquisarPorcadaCampoUnico 
+-mostrarporumDeterminadoCampo
+
+-
