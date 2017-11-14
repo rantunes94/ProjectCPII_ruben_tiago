@@ -1,0 +1,60 @@
+Menu Principal
+1- Menu Funcionarios ('Gerir Funcionarios') //1as a inserir
+	1- Inserir  ---Como inserir Curso
+	2- Alterar
+	3- Consultar                  
+	4- Eliminar
+	0- Voltar ao menu anterior
+
+2- Menu divisao ('Gerir Divisoes'): //1s a inserir
+	1- Inserir
+	2- Consultar por designaçao
+	0- Voltar ao menu anterior
+
+3- Menu Tipos de Equipamentos(' Gerir Tipos de equipamentos') //1s a i nserir
+	1- Inserir
+	2- Consultar todos
+	0- Voltar ao menu anterior
+
+4- Menu Equipamentos ('Gerir Equipamentos')  
+	1- Registar  -- Como inserir Aluno
+	2- Consultar por divisao
+	0- Voltar ao menu anterior
+
+5- Menu Avarias ('Gerir avarias/reparações')
+	1- Registar
+	2- Alterar Estado (é aqui que inseramos a reparaçao)
+	3- Consultar por numero de equipamento
+	0- Voltar ao menu anterior
+
+6- Menu Estatisticas (cuidado que o 'o número total de avarias em cada
+equipamento.', Indicar (no menu principal) o número de equipamentos por tipo de
+equipamento- tem que tar guardado numa variavel na classeTipoDeEquipamentos e por divisao; e mais tb sao estatisticas, fora as outras consultas/estatisticas')
+
+	1-Percentagem de equipamentos com avarias no hospital.
+	2-Total de avarias registadas por estado num determinado ano --  à medida que vao registando avarias temos que guardar esse svaloresesta estatistica se for bem feita tenho que fazer outra Classe que guardasse estes 3 valores, pq s enao tinha que fazer com fors e e muito complicado
+(ordenado de forma crescente pelo total e descresente pelo total).
+	3-Total gasto por ano em equipamentos (ordenado por ordem
+decrescente do total).  na classe gestao tenho que guardar la o ano e total gasto e criar uma lista(array) por isso tenho que criar uma classe com o ano e total gasto
+	...
+
+Nota: quando listar equipamentos temos que dizer o numero de avarias e outras cenas.
+-----------------------------------------------------------------------------------------------
+Classes:
+- Divisao
+- Funcionario (FuncionariosMedicos,FuncionariosOutros(é necessario fazer funçao <- verificar se funçao = tecnico) posso fazer uma classe para tecnico
+- TipoDeEquipamento
+- Equipamento
+- Avaria
+- Reparacao
+
+-GestaoRH --fazer o metodo adicionar, ObterElemento; pesquisar; ConsultarTodos; TotalElementos para cada lista
+-Main
+
+------------------------------------------
+
+Os Inserir sao parecidos ao Inserir Aluno e Curso
+
+----------------------------------
+
+Dizer que o nif e unico e percorrer um array e ver se ja la esta como fizemos no projeto
