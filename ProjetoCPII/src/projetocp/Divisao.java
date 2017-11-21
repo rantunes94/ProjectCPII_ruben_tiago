@@ -3,7 +3,7 @@ package projetocp;
 import java.io.Serializable;
 
 public class Divisao implements Serializable {
-    private static int quantidadeEquipamentosInstalados;
+    public static int quantidadeEquipamentosInstalados;
     private String designacao;
     private String localizacao;
 

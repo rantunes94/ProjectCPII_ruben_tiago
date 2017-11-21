@@ -91,6 +91,10 @@ public class GestaoRH {
             ObjectInputStream in = new ObjectInputStream(new FileInputStream("grh.dat"));
             divisoes = (ArrayList<Divisao>) in.readObject();
             funcionarios = (ArrayList<Funcionario>) in.readObject();
+
+            Divisao.quantidadeEquipamentosInstalados= divisoes.size();
+            TipoEquipamento.numero= tiposEquipamento.size();
+
             in.close();
         } catch (IOException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());

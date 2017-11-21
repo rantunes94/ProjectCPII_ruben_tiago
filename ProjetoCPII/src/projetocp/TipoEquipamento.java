@@ -3,10 +3,11 @@ package projetocp;
 import java.io.Serializable;
 
 public class TipoEquipamento implements Serializable {
-    private int numero;
+    public static int numero;
     private String designacao;
 
     public TipoEquipamento(String designacao) {
+        numero++;
         this.designacao = designacao;
     }
 
