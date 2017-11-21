@@ -67,8 +67,8 @@ NAO FAZER AS ESTATISTICAS NA MAIN , ELAS TÊM DE SER FEITAS ONDE TIVEREM AS ARRAY
 
 Para cada lista
 - adicionar
--obterElemento
--obterTodosElementos
+-obterElemento (int pos)
+-obterTodosElementos devolve: return nomedalista.size();
 -mostrarTodos
 -pesquisarPorcadaCampoUnico 
 
@@ -111,6 +111,68 @@ outroFunc
 associar aluno ao curso é como associar a um equipamento, um tipo.
 ver isso no inseirAluno a última parte do Aluno a= new blabla.
 
+-------------------------------
+ESTATISTICAS numero total de equipamentos com avarias -> numero total de funcionarios com salario >1000
+		numero total de equipamentos por tipo-> numero total de alunos por curso
 
+
+vou ter que criar uma variavel numAvarias na classe curso
+
+na classe gestaoRH fazer numFuncSalSuperior1000 e criar os getter and setter e depois no inserirAluno,inseir Docente e Naodocente ver comentarios
+
+na classe gestao rh mudar no ler e gravarFicheiro os comentarios
+na classe gestao rh mudar no mostrarEstatistica os comentarios
+
+-----------------------------------------------
+CLASSE DIVISAO
+
+falta um array para equipamentos, pq quero listar todos os equipamentos que estao dentro d euma divisao
+
+fazer um for de tds os equipamentos e ver qual pertence àquela divisao
+
+
+pedir a designaçao da divisao
+verificar se ela existe (pos = gestao.pesquisarDivisao(designacao)
+se existir, Divisao d = gestao.obterDivisao(pos)
+sout(d.mostrarEquipamentos())
+
+-----------------------------
+CLASSE FUNCIONARIO
+validar a idade dos funcionarios (>18)
+
+funcionario desce para medicos ou nao medicos, e estes para tecnico e nao tecnico
+
+-----------------------
+CLASSSE TipoEquipamento
+
+numTotaldeEquipamentos desse tipo
+
+fazer um for que percorre tds os tipos e diz a designaçao na gestaoRH
+
+------------------------------------
+CLASSE EQUIPAMENTO
+TipoEquipamento tipoEquipamento
+Divisao divisao
+FuncionarioTecnico tecnico (que inventariou a cena)
+estado e um campo que nao deve ser pedido ao utilizador.
+
+int numTotalAvarias(qnd insiro uma avaria, tenho que ir a este campo e dizer que tenho uma vaaria nesse equipamento).
+
+-----------------------------
+CLASSE AVARIA
+
+o funcionario deve ser do tipo Funcionario
+as reparaçoes sao do tipo Tecnico
+
+------------------------
+
+ESTATISTICA- Percentagem de euipamentos com avarias no hosp
+variavel para numero total de equips com avarias
+
+-----------------------
+ESTATISTICA total gasto por ano
+criar classe do tipo TotalAno (ano,total), a classe gestao vai ter que te uma lista do tipo totalAno
+
+---------------------------
 
 
