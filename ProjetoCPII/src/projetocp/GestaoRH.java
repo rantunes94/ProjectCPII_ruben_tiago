@@ -10,8 +10,6 @@ public class GestaoRH {
     private ArrayList<Funcionario> funcionarios = new ArrayList<>();
     private ArrayList<TipoEquipamento> tiposEquipamento = new ArrayList<>();
 
-
-
     public int getNumFuncionarios() {
         return funcionarios.size();
     }

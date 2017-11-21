@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class TipoEquipamento implements Serializable {
     public static int numero;
     private String designacao;
+    private int numEquipamentoPorEquipamento; // variavel para estatisticas , for na main/gestao para calcular o numero por designacao??
 
     public TipoEquipamento(String designacao) {
         numero++;
