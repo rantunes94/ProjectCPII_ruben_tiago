@@ -1,11 +1,12 @@
 package projetocp;
 
-public class TipoEquipamento {
+import java.io.Serializable;
+
+public class TipoEquipamento implements Serializable {
     private int numero;
     private String designacao;
 
-    public TipoEquipamento(int numero, String designacao) {
-        this.numero = numero;
+    public TipoEquipamento(String designacao) {
         this.designacao = designacao;
     }
 
@@ -24,4 +25,13 @@ public class TipoEquipamento {
     public void setDesignacao(String designacao) {
         this.designacao = designacao;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder str =new StringBuilder();
+        str.append("Tipo de Equipamento:");
+        str.append("\n\tDesignação do Tipo de Equipamento: ").append(designacao);
+        return str.toString();
+    }
+
 }

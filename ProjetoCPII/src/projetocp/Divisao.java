@@ -1,14 +1,18 @@
 package projetocp;
 
-public class Divisao {
+import java.io.Serializable;
+
+public class Divisao implements Serializable {
+    private static int quantidadeEquipamentosInstalados;
     private String designacao;
     private String localizacao;
-    private int quantidadeEquipamentosInstalados;
 
-    public Divisao(String designacao, String localizacao, int quantidadeEquipamentosInstalados) {
+
+    public Divisao(String designacao, String localizacao) {
+        quantidadeEquipamentosInstalados++; // incrementar a quantidade quando se cria uma nova instancia
         this.designacao = designacao;
         this.localizacao = localizacao;
-        this.quantidadeEquipamentosInstalados = quantidadeEquipamentosInstalados;
+
     }
 
     public String getDesignacao() {
@@ -31,8 +35,13 @@ public class Divisao {
         return quantidadeEquipamentosInstalados;
     }
 
-    public void setQuantidadeEquipamentosInstalados(int quantidadeEquipamentosInstalados) {
-        this.quantidadeEquipamentosInstalados = quantidadeEquipamentosInstalados;
+    @Override
+    public String toString() {
+        StringBuilder str =new StringBuilder();
+        str.append("Divisão:");
+        str.append("\n\tDesignação da divisão: ").append(designacao);
+        str.append("\n\tLocalização da divisão: ").append(localizacao);
+        return str.toString();
     }
 
 

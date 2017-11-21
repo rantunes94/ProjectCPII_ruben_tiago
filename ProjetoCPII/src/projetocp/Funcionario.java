@@ -1,8 +1,9 @@
 package projetocp;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
-public class Funcionario {
+public class Funcionario implements Serializable {
     protected int nif;
     protected String nome;
     protected   String morada;
