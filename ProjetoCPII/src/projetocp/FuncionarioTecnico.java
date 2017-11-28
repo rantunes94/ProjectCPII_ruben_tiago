@@ -12,9 +12,7 @@ public class FuncionarioTecnico extends FuncionarioOutros {
         this.password = password;
     }
 
-    public String getUsername() {
-        return username;
-    }
+    public String getUsername() { return username; }
 
     public void setUsername(String username) {
         this.username = username;
@@ -26,5 +24,16 @@ public class FuncionarioTecnico extends FuncionarioOutros {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+
+    @Override
+    public String toString() {
+        StringBuilder str =new StringBuilder();
+        str.append("Funcionário Técnico:");
+        str.append(super.toString());
+        str.append("\n\tEspecialidade do médico: ").append(username);
+        //não listei a password por motivos de segurança do funcionário
+        return str.toString();
     }
 }

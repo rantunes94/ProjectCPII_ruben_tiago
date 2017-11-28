@@ -208,7 +208,7 @@ public class Main {
         System.out.println("1 - Gerir Funcionários");
         System.out.println("2 - Gerir Divisão");
         System.out.println("3 - Gerir Tipos de Equipamento");
-        System.out.println("4 - Gerir Equipamentos");
+        System.out.println("4 - Gerir Equipamento");
         System.out.println("5 - Gerir Avarias/Reparações");
         System.out.println("6 - Estatisticas");
         System.out.println("0 - Sair\n");
@@ -221,7 +221,8 @@ public class Main {
         int opcao;
 
         System.out.println();
-        System.out.println("1 - Inserir Funcionário");
+        System.out.println("1 - Inserir Funcionário"); // criar sub menus para cada tipo de funcionario OU printf em que dizemos escolha a opcao 1,2,3
+                                                        // ter um método para verificar que tipo é consoante o numero de forma  evitar codigo
         System.out.println("2 - Alterar Funcionário");
         System.out.println("3 - Consultar Funcionário");
         System.out.println("4 - Eliminar Funcionário");
@@ -320,10 +321,6 @@ public class Main {
 
         System.out.println("Divisão inserida com sucesso!");
     }
-
-
-
-
 
 
 

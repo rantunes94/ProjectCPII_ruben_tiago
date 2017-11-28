@@ -1,6 +1,6 @@
 package projetocp;
 
-public class Equipamentos {
+public class Equipamento {
     private int numero;
     //private Calendar dataIventariacao
     private String estado;

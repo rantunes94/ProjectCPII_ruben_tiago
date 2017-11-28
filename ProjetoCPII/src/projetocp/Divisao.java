@@ -7,15 +7,28 @@ public class Divisao implements Serializable {
     public static int quantidadeEquipamentosInstalados; // isto so se faz quando se associa uma divisao....
     private String designacao;
     private String localizacao;
-    // array list de equipamentos
-    //private ArrayList<Equipamento> equipamentos = new ArrayList<>();
+    private ArrayList<Equipamento> equipamentos = new ArrayList<>();// metodo para add e mostrar equipamentos
+
 
     public Divisao(String designacao, String localizacao) {
-        quantidadeEquipamentosInstalados++; // incrementar a quantidade quando se cria uma nova instancia
         this.designacao = designacao;
         this.localizacao = localizacao;
 
     }
+
+    public void adicionarEquipamentos(Equipamento equipamento){
+        equipamentos.add(equipamento);
+    }
+
+    public String mostrarEquipamentos(){
+        StringBuilder str= new StringBuilder("");
+        for (int i=0; i<equipamentos.size(); i++) {
+            str.append(equipamentos.get(i)).append("\n");
+        }
+        return str.toString();
+    }
+
+
 
     public String getDesignacao() {
         return designacao;

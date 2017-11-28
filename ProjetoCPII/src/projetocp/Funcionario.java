@@ -77,4 +77,25 @@ public class Funcionario implements Serializable {
     public void setHabilitacoes(String habilitacoes) {
         this.habilitacoes = habilitacoes;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder str =new StringBuilder();
+        str.append("Funcionário:");
+        str.append("\n\tNif do funcionário: ").append(nif);
+        str.append("\n\tNome do funcionário: ").append(nome);
+        str.append("\n\tMorada do funcionário: ").append(morada);
+        str.append("\n\tTelefone do funcionário: ").append(telefone);
+        str.append("\n\tEmail do funcionário: ").append(email);
+
+        str.append("\n\tdataNascimento do funcionário: ").
+                append(dataNascimento.get(Calendar.DATE)).
+                append("-").append((dataNascimento.get(Calendar.MONTH) + 1)).
+                append("-").append(dataNascimento.get(Calendar.YEAR));
+
+
+        str.append("\n\tHabilitações do funcionário: ").append(morada);
+
+        return str.toString();
+    }
 }
