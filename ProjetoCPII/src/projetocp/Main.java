@@ -84,7 +84,7 @@ public class Main {
                                 criarTiposEquipamento();
                                 break;
                             case 2:
-                                if (grh.getNumTiposEquipamento() > 0)
+                                if (grh.getTotalTiposEquipamento() > 0)
                                     System.out.println(grh.mostrarTipoEquipamentos());
                                 else
                                     System.err.println("Ainda não foram inseridos Tipos de Equipamento!");

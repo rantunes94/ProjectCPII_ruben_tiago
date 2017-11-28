@@ -1,12 +1,14 @@
 package projetocp;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Divisao implements Serializable {
     public static int quantidadeEquipamentosInstalados; // isto so se faz quando se associa uma divisao....
     private String designacao;
     private String localizacao;
     // array list de equipamentos
+    //private ArrayList<Equipamento> equipamentos = new ArrayList<>();
 
     public Divisao(String designacao, String localizacao) {
         quantidadeEquipamentosInstalados++; // incrementar a quantidade quando se cria uma nova instancia

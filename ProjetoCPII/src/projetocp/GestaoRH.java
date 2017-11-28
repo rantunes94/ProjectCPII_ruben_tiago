@@ -10,13 +10,11 @@ public class GestaoRH {
     private ArrayList<Funcionario> funcionarios = new ArrayList<>();
     private ArrayList<TipoEquipamento> tiposEquipamento = new ArrayList<>();
 
-    public int getNumFuncionarios() {
+    public int getTotalFuncionarios() {
         return funcionarios.size();
     }
-    public int getNumDivisoes() {
-        return divisoes.size();
-    }
-    public int getNumTiposEquipamento() { return tiposEquipamento.size(); }
+    public int getTotalDivisoes() { return divisoes.size(); }
+    public int getTotalTiposEquipamento() { return tiposEquipamento.size(); }
 
     public Funcionario obterFuncionario (int pos){
         return funcionarios.get(pos);
@@ -43,7 +41,6 @@ public class GestaoRH {
         tiposEquipamento.add(tipoEquipamento);
     }
 
-
     public void eliminarFuncionario(int pos){
         funcionarios.remove(pos);
     }
@@ -64,6 +61,13 @@ public class GestaoRH {
         return str.toString();
     }
 
+    public int pesquisarTipoEquipamento(int numero){ // à partida nao vai ser necessario
+        for (int i=0; i<tiposEquipamento.size(); i++)
+            if (tiposEquipamento.get(i).getNumero()==numero)
+                return i;
+        return -1;
+    }
+
     public int pesquisarDivisao(String designacao){
         for (int i=0; i<divisoes.size(); i++)
             if (divisoes.get(i).getDesignacao().equalsIgnoreCase(designacao))
@@ -78,6 +82,8 @@ public class GestaoRH {
             ObjectOutputStream out= new ObjectOutputStream(new FileOutputStream("grh.dat"));
             out.writeObject(divisoes);
             out.writeObject(funcionarios);
+            out.writeObject(tiposEquipamento);
+
             out.close();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
@@ -89,9 +95,10 @@ public class GestaoRH {
             ObjectInputStream in = new ObjectInputStream(new FileInputStream("grh.dat"));
             divisoes = (ArrayList<Divisao>) in.readObject();
             funcionarios = (ArrayList<Funcionario>) in.readObject();
+            tiposEquipamento = (ArrayList<TipoEquipamento>) in.readObject();
 
             Divisao.quantidadeEquipamentosInstalados= divisoes.size();
-            TipoEquipamento.numero= tiposEquipamento.size();
+
 
             in.close();
         } catch (IOException | ClassNotFoundException ex) {
