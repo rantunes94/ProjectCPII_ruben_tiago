@@ -2,9 +2,15 @@ package projetocp;
 
 import util.Consola;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public class Main {
 
     private static GestaoRH grh = new GestaoRH();
+    public static SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
 
     public static void main(String[] args) {
 	// write your code here
@@ -56,6 +62,7 @@ public class Main {
                                 break;
                             case 2:
                                 // verificação , array vazio?
+                                // qnd pomos uma designaçao errada, diz 'String vazia'
                                 consultarDivisao();
                                 break;
                             case 3:
@@ -232,6 +239,7 @@ public class Main {
         return opcao;
     }
 
+
     private static int menuDivisão() {
         int opcao;
 
@@ -319,7 +327,7 @@ public class Main {
 
         grh.adicionarTipoEquipamento(te1);
 
-        System.out.println("Divisão inserida com sucesso!");
+        System.out.println("Divisão inserida com sucesso!"); // não é Tipo de Equipamento inserido com sucesso?
     }
 
 
@@ -338,6 +346,40 @@ public class Main {
         divisao=grh.obterDivisao(pos);
 
         System.out.println(divisao);
+    }
+
+
+    public static void criarFuncionario(){
+        int nif, telefone;
+        String nome,morada,email,habilitacoes, dataN;
+        Calendar dataNascimento = new GregorianCalendar();
+        Funcionario f1;
+        int errodn = 0;
+
+        nif = Consola.lerInt("Indique o nif do Funcionário: ",000000000,999999999); //o que por no minimo e maximo?
+        nome = Consola.lerString("Indique o nome do Funcionário: ");
+        telefone = Consola.lerInt("Indique o telefone do Funcionário: ",000000000,999999999);
+        morada = Consola.lerString("Indique a morada do Funcionário: ");
+        email = Consola.lerString("Indique o email do Funcionário: ");
+        habilitacoes = Consola.lerString("Indique as habilitações do Funcionário: ");
+
+        do {
+            errodn = 0;
+            try {
+                dataN = Consola.lerString("Indique a data de nascimento do docente (dd-mm-yyyy): ");
+                dataNascimento.setTime(formato.parse(dataN));
+            } catch (ParseException e) {
+                errodn = 1;
+                System.err.println("Data de nascimento com formato inválido!");
+            }
+        } while (errodn == 1);
+
+
+        f1 = new Funcionario(nif,nome,morada,telefone,email,dataNascimento,habilitacoes);
+
+        grh.adicionarFuncionario(f1);
+
+        System.out.println("Funcionário inserido com sucesso!");
     }
 
 
