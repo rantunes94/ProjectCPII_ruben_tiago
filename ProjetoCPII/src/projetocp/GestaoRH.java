@@ -31,7 +31,6 @@ public class GestaoRH {
         funcionarios.add(funcionario);
     }
     public void adicionarDivisao(Divisao divisao){ divisoes.add(divisao); }
-
     public void adicionarTipoEquipamento(TipoEquipamento tipoEquipamento){
         if (!tiposEquipamento.isEmpty())
             tipoEquipamento.setNumero(tiposEquipamento.get(tiposEquipamento.size()-1).getNumero()+1);

@@ -4,13 +4,13 @@ import java.util.Calendar;
 
 public class FuncionarioMedico extends Funcionario {
     private String especialidade;
-    private String seccaoTabalho;
+    private String seccaoTrabalho;
 
 
-    public FuncionarioMedico(int nif, String nome, String morada, int telefone, String email, Calendar dataNascimento, String habilitacoes, String especialidade, String seccaoTabalho) {
+    public FuncionarioMedico(int nif, String nome, String morada, int telefone, String email, Calendar dataNascimento, String habilitacoes, String especialidade, String seccaoTrabalho) {
         super(nif, nome, morada, telefone, email, dataNascimento, habilitacoes);
         this.especialidade = especialidade;
-        this.seccaoTabalho = seccaoTabalho;
+        this.seccaoTrabalho = seccaoTrabalho;
     }
 
     public String getEspecialidade() {
@@ -22,11 +22,11 @@ public class FuncionarioMedico extends Funcionario {
     }
 
     public String getSeccaoTabalho() {
-        return seccaoTabalho;
+        return seccaoTrabalho;
     }
 
     public void setSeccaoTabalho(String seccaoTabalho) {
-        this.seccaoTabalho = seccaoTabalho;
+        this.seccaoTrabalho = seccaoTabalho;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class FuncionarioMedico extends Funcionario {
         str.append("Funcionário Médico:");
         str.append(super.toString());
         str.append("\n\tEspecialidade do médico: ").append(especialidade);
-        str.append("\n\tSecção de trabalho do médico: ").append(seccaoTabalho);
+        str.append("\n\tSecção de trabalho do médico: ").append(seccaoTrabalho);
 
         return str.toString();
     }

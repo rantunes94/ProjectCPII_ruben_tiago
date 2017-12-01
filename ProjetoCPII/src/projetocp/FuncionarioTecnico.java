@@ -32,7 +32,7 @@ public class FuncionarioTecnico extends FuncionarioOutros {
         StringBuilder str =new StringBuilder();
         str.append("Funcionário Técnico:");
         str.append(super.toString());
-        str.append("\n\tEspecialidade do médico: ").append(username);
+        str.append("\n\tNome de utilizador: ").append(username);
         //não listei a password por motivos de segurança do funcionário
         return str.toString();
     }

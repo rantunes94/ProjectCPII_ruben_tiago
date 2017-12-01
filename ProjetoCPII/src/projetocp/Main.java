@@ -29,7 +29,7 @@ public class Main {
                         opcaoSubMenu = menuFuncionario();
                         switch (opcaoSubMenu) {
                             case 1:
-
+                                criarFuncionario();
                                 break;
                             case 2:
 
@@ -349,24 +349,27 @@ public class Main {
     }
 
 
-    public static void criarFuncionario(){
-        int nif, telefone;
-        String nome,morada,email,habilitacoes, dataN;
+    public static void criarFuncionario(){ //como tnho return so da com int?
+        int nif, telefone,tipo;
+        String nome,morada,email,habilitacoes, dataN, especialidade,seccaoTrabalho,username,password, funcao;
         Calendar dataNascimento = new GregorianCalendar();
         Funcionario f1;
         int errodn = 0;
 
-        nif = Consola.lerInt("Indique o nif do Funcionário: ",000000000,999999999); //o que por no minimo e maximo?
+
+        nif = Consola.lerInt("Indique o nif do Funcionário: ",100000000,999999999);
         nome = Consola.lerString("Indique o nome do Funcionário: ");
-        telefone = Consola.lerInt("Indique o telefone do Funcionário: ",000000000,999999999);
+        telefone = Consola.lerInt("Indique o telefone do Funcionário: ",100000000,999999999);
         morada = Consola.lerString("Indique a morada do Funcionário: ");
         email = Consola.lerString("Indique o email do Funcionário: ");
         habilitacoes = Consola.lerString("Indique as habilitações do Funcionário: ");
 
+        //criar uma especie d emenu com tipo, e inserir um if a ver se é medico,etc
+
         do {
             errodn = 0;
             try {
-                dataN = Consola.lerString("Indique a data de nascimento do docente (dd-mm-yyyy): ");
+                dataN = Consola.lerString("Indique a data de nascimento do funcionário (dd-mm-yyyy): ");
                 dataNascimento.setTime(formato.parse(dataN));
             } catch (ParseException e) {
                 errodn = 1;
@@ -374,12 +377,41 @@ public class Main {
             }
         } while (errodn == 1);
 
+        do {
+            System.out.println("Escolha o tipo de Funcionário a inserir:");
+            System.out.println("1 - Médico");
+            System.out.println("2 - Técnico");
+            System.out.println("3 - Outros");
+            tipo = Consola.lerInt("Opcao: ", 1, 3);
+        }while(tipo<0 && tipo >3);
 
-        f1 = new Funcionario(nif,nome,morada,telefone,email,dataNascimento,habilitacoes);
+        if(tipo==1) {
+            especialidade = Consola.lerString("Indique a especialidade do médico: ");
+            seccaoTrabalho = Consola.lerString("Indique a seccção de trabalho do médico: ");
 
-        grh.adicionarFuncionario(f1);
+            f1 = new FuncionarioMedico(nif,nome,morada,telefone,email,dataNascimento,habilitacoes,especialidade,seccaoTrabalho);
 
-        System.out.println("Funcionário inserido com sucesso!");
+            grh.adicionarFuncionario(f1);
+            System.out.println("Funcionário inserido com sucesso!");
+        }
+        if(tipo==2){
+            funcao = Consola.lerString("Indique a função do técnico: ");
+            username =  Consola.lerString("Indique o username do técnico: ");
+            password = Consola.lerString("Indique a password do técnico: ");
+
+            f1 = new FuncionarioTecnico(nif,nome,morada,telefone,email,dataNascimento,habilitacoes,funcao,username,password);
+
+            grh.adicionarFuncionario(f1);
+            System.out.println("Funcionário inserido com sucesso!");
+        } if(tipo==3){
+            funcao = Consola.lerString("Indique a função do Funcionário: ");
+
+            f1 = new FuncionarioOutros(nif,nome,morada,telefone,email,dataNascimento,habilitacoes,funcao);
+
+            grh.adicionarFuncionario(f1);
+            System.out.println("Funcionário inserido com sucesso!");
+        }
+
     }
 
 
