@@ -44,7 +44,14 @@ public class GestaoRH {
         funcionarios.remove(pos);
     }
 
-    public String consultarFuncionarios(){
+    public int pesquisarFuncionarios(int nif) {
+        for (int i = 0; i < funcionarios.size(); i++)
+            if (funcionarios.get(i).getNif() == nif)
+                return i;
+            return -1;
+    }
+
+    public String mostrarFuncionarios(){
         StringBuilder str= new StringBuilder("");
         for (int i=0; i<funcionarios.size(); i++) {
             str.append(funcionarios.get(i)).append("\n");

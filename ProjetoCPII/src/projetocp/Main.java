@@ -32,11 +32,18 @@ public class Main {
                                 criarFuncionario();
                                 break;
                             case 2:
-
                                 break;
                             case 3:
+                                if (grh.getTotalFuncionarios() > 0)
+                                    System.out.println(grh.mostrarFuncionarios()); //o to string esta a aparecer mal nao sei porque
+                                else
+                                    System.err.println("Ainda não foram inseridos funcionários!");
                                 break;
                             case 4:
+                                if (grh.getTotalFuncionarios() > 0)
+                                    eliminarFuncionario();
+                                else
+                                    System.err.println("Ainda não foram inseridos funcionários!");
                                 break;
                             case 0:
                                 System.out.println("Vai voltar ao menu anterior");
@@ -305,11 +312,18 @@ public class Main {
     public static void criarDivisao() {
         String designacao, localizacao;
         Divisao d1;
+        int pos;
+        do {  //validação de existencia
+            designacao = Consola.lerString("Indique a designação da Divisão: ");
+            pos = grh.pesquisarDivisao(designacao);
+            if (pos == -1)
+                System.err.println("Divisão não existe!");
+        } while (pos == -1);
 
-        designacao = Consola.lerString("Indique a designação da Divisão: ");
         localizacao = Consola.lerString("Indique a localização da Divisão: ");
 
         d1 = new Divisao(designacao, localizacao);
+
 
         grh.adicionarDivisao(d1);
 
@@ -349,23 +363,33 @@ public class Main {
     }
 
 
-    public static void criarFuncionario(){ //como tnho return so da com int?
-        int nif, telefone,tipo;
+    public static void criarFuncionario(){
+        int nif, telefone,tipo, pos;
         String nome,morada,email,habilitacoes, dataN, especialidade,seccaoTrabalho,username,password, funcao;
         Calendar dataNascimento = new GregorianCalendar();
         Funcionario f1;
         int errodn = 0;
+        //validação a ver se o funcionario que criamos ja existe ou nao
+        do {
+            nif = Consola.lerInt("Indique o nif do Funcionário: ",100000000,999999999);
+            pos = grh.pesquisarFuncionarios(nif);
+            if (pos != -1)
+                System.err.println("Funcionário já existe!");
+        } while (pos != -1);
 
-
-        nif = Consola.lerInt("Indique o nif do Funcionário: ",100000000,999999999);
         nome = Consola.lerString("Indique o nome do Funcionário: ");
         telefone = Consola.lerInt("Indique o telefone do Funcionário: ",100000000,999999999);
         morada = Consola.lerString("Indique a morada do Funcionário: ");
         email = Consola.lerString("Indique o email do Funcionário: ");
         habilitacoes = Consola.lerString("Indique as habilitações do Funcionário: ");
 
-        //criar uma especie d emenu com tipo, e inserir um if a ver se é medico,etc
-
+        //validar idade dos funionarios? metodo validarIdade na classe Funcionario mais interfaceFuncionario
+        /*if (f1.validarIdade()) {
+            grh.adicionarFuncionario(f1);
+            System.out.println("Funcionário introduzido com sucesso!");
+        } else {
+            System.err.println("Funcionário com idade inválida!");
+        }*/
         do {
             errodn = 0;
             try {
@@ -413,6 +437,33 @@ public class Main {
         }
 
     }
+
+    public static void alterarFuncionarios() { //alterar morada e telefone
+        int nif, pos;
+        Funcionario funcionario;
+        do {
+            nif = Consola.lerInt("Indique o nif do funcionário a alterar: ", 100000000, 999999999);
+            pos = grh.pesquisarFuncionarios(nif);
+            if (pos == -1)
+                System.err.println("Funcionário não existe!");
+        } while (pos == -1);
+
+        funcionario = grh.obterFuncionario(pos);
+    }
+
+    public static void eliminarFuncionario() {
+        int nif, pos;
+        do {
+            nif = Consola.lerInt("Indique o nif do funcionário: ", 100000000, 999999999);
+            pos = grh.pesquisarFuncionarios(nif);
+            if (pos == -1)
+                System.err.println("Funcionário não existe!");
+        } while (pos == -1);
+        grh.eliminarFuncionario(pos);
+        System.out.println("Funcionário removido com sucesso!");
+    }
+
+
 
 
 }
