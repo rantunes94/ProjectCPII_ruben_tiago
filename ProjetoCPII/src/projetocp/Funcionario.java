@@ -81,20 +81,20 @@ public class Funcionario implements Serializable {
     @Override
     public String toString() {
         StringBuilder str =new StringBuilder();
-        str.append("Funcionário:");
-        str.append("\n\tNif do funcionário: ").append(nif);
-        str.append("\n\tNome do funcionário: ").append(nome);
-        str.append("\n\tMorada do funcionário: ").append(morada);
-        str.append("\n\tTelefone do funcionário: ").append(telefone);
-        str.append("\n\tEmail do funcionário: ").append(email);
+        //str.append("Funcionário:");
+        str.append("\n\tNif: ").append(nif);
+        str.append("\n\tNome: ").append(nome);
+        str.append("\n\tMorada: ").append(morada);
+        str.append("\n\tTelefone: ").append(telefone);
+        str.append("\n\tEmail: ").append(email);
 
-        str.append("\n\tdataNascimento do funcionário: ").
+        str.append("\n\tData de nascimento: ").
                 append(dataNascimento.get(Calendar.DATE)).
                 append("-").append((dataNascimento.get(Calendar.MONTH) + 1)).
                 append("-").append(dataNascimento.get(Calendar.YEAR));
 
 
-        str.append("\n\tHabilitações do funcionário: ").append(morada);
+        str.append("\n\tHabilitações: ").append(morada);
 
         return str.toString();
     }

@@ -34,6 +34,7 @@ public class FuncionarioMedico extends Funcionario {
         StringBuilder str =new StringBuilder();
         str.append("Funcionário Médico:");
         str.append(super.toString());
+
         str.append("\n\tEspecialidade do médico: ").append(especialidade);
         str.append("\n\tSecção de trabalho do médico: ").append(seccaoTrabalho);
 

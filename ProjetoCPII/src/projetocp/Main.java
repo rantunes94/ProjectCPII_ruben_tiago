@@ -419,11 +419,11 @@ public class Main {
             System.out.println("Funcionário inserido com sucesso!");
         }
         if(tipo==2){
-            funcao = Consola.lerString("Indique a função do técnico: ");
             username =  Consola.lerString("Indique o username do técnico: ");
             password = Consola.lerString("Indique a password do técnico: ");
 
-            f1 = new FuncionarioTecnico(nif,nome,morada,telefone,email,dataNascimento,habilitacoes,funcao,username,password);
+            funcao=("Técnico");
+            f1 = new FuncionarioOutros(nif,nome,morada,telefone,email,dataNascimento,habilitacoes,funcao,username,password);
 
             grh.adicionarFuncionario(f1);
             System.out.println("Funcionário inserido com sucesso!");
