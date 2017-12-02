@@ -22,7 +22,6 @@ public class Main {
             opcao = menu();
             switch (opcao) {
                 case 1:
-                    //if (gcp.getNumAlunos() > 0) // se houver alunos
                 {
 
                     do {
@@ -72,13 +71,10 @@ public class Main {
                                 criarDivisao();
                                 break;
                             case 2:
-                                // verificação , array vazio?
-                                // qnd pomos uma designaçao errada, diz 'String vazia'
-                                consultarDivisao();
-                                break;
-                            case 3:
-                                break;
-                            case 4:
+                                if (grh.getTotalDivisoes() > 0)
+                                    consultarDivisao();
+                                else
+                                    System.err.println("Ainda não foram inseridas divisões!");
                                 break;
                             case 0:
                                 System.out.println("Vai voltar ao menu anterior");
