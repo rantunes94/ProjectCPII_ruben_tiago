@@ -41,7 +41,13 @@ public class GestaoRH {
     }
 
     public void eliminarFuncionario(int pos){
+
         funcionarios.remove(pos);
+    }
+
+    public void alterarFuncionario(int novoTelefone,String novaMorada,int posicao){
+        funcionarios.get(posicao).setTelefone(novoTelefone);
+        funcionarios.get(posicao).setMorada(novaMorada);
     }
 
     public int pesquisarFuncionarios(int nif) {

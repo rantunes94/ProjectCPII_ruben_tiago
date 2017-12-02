@@ -32,6 +32,10 @@ public class Main {
                                 criarFuncionario();
                                 break;
                             case 2:
+                                if (grh.getTotalFuncionarios() > 0)
+                                    alterarFuncionario();
+                                else
+                                    System.err.println("Ainda não foram inseridos funcionários!");
                                 break;
                             case 3:
                                 if (grh.getTotalFuncionarios() > 0)
@@ -438,18 +442,30 @@ public class Main {
 
     }
 
-    public static void alterarFuncionarios() { //alterar morada e telefone
+
+
+    public static void alterarFuncionario() {
         int nif, pos;
-        Funcionario funcionario;
+        int novoTelefone=0;
+        String novaMorada;
+
         do {
             nif = Consola.lerInt("Indique o nif do funcionário a alterar: ", 100000000, 999999999);
             pos = grh.pesquisarFuncionarios(nif);
-            if (pos == -1)
+            if (pos == -1){
                 System.err.println("Funcionário não existe!");
+            } else
+
+                novoTelefone = Consola.lerInt("Indique o novo telefone do Funcionário: ",100000000,999999999);
+                novaMorada = Consola.lerString("Indique a nova morada do Funcionário: ");
+
+            grh.alterarFuncionario(novoTelefone,novaMorada,pos);
+            System.out.println("Alteração feita com sucesso!");
+
         } while (pos == -1);
 
-        funcionario = grh.obterFuncionario(pos);
     }
+
 
     public static void eliminarFuncionario() {
         int nif, pos;
