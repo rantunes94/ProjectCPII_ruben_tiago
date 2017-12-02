@@ -445,7 +445,7 @@ public class Main {
 
 
     public static void alterarFuncionario() {
-        int nif, pos;
+        int nif, pos,opcao=0;
         int novoTelefone=0;
         String novaMorada;
 
@@ -456,11 +456,34 @@ public class Main {
                 System.err.println("Funcionário não existe!");
             } else
 
-                novoTelefone = Consola.lerInt("Indique o novo telefone do Funcionário: ",100000000,999999999);
-                novaMorada = Consola.lerString("Indique a nova morada do Funcionário: ");
+                do {
+                    System.out.println("Escolha o que quer alterar:");
+                    System.out.println("1 - Só o número de Telefone");
+                    System.out.println("2 - Só a morada");
+                    System.out.println("3 - Ambos");
+                    opcao = Consola.lerInt("Opcao: ", 1, 3);
+                }while(opcao<0 && opcao >3);
 
-            grh.alterarFuncionario(novoTelefone,novaMorada,pos);
-            System.out.println("Alteração feita com sucesso!");
+            if(opcao==1) {
+
+                novoTelefone = Consola.lerInt("Indique o novo telefone do Funcionário: ", 100000000, 999999999);
+                grh.alterarFuncionarioTelefone(novoTelefone, pos);
+                System.out.println("Alteração feita com sucesso!");
+            }
+            if(opcao==2) {
+
+                novaMorada = Consola.lerString("Indique a nova morada do Funcionário: ");
+                grh.alterarFuncionarioMorada(novaMorada, pos);
+                System.out.println("Alteração feita com sucesso!");
+            }
+
+                if(opcao==3) {
+
+                    novoTelefone = Consola.lerInt("Indique o novo telefone do Funcionário: ", 100000000, 999999999);
+                    novaMorada = Consola.lerString("Indique a nova morada do Funcionário: ");
+                    grh.alterarFuncionario(novoTelefone, novaMorada, pos);
+                    System.out.println("Alteração feita com sucesso!");
+                }
 
         } while (pos == -1);
 

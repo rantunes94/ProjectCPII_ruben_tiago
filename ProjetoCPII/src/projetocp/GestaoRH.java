@@ -50,6 +50,16 @@ public class GestaoRH {
         funcionarios.get(posicao).setMorada(novaMorada);
     }
 
+    public void alterarFuncionarioTelefone(int novoTelefone,int posicao){
+        funcionarios.get(posicao).setTelefone(novoTelefone);
+
+    }
+
+    public void alterarFuncionarioMorada(String novaMorada,int posicao){
+
+        funcionarios.get(posicao).setMorada(novaMorada);
+    }
+
     public int pesquisarFuncionarios(int nif) {
         for (int i = 0; i < funcionarios.size(); i++)
             if (funcionarios.get(i).getNif() == nif)
