@@ -345,7 +345,7 @@ public class Main {
 
         grh.adicionarTipoEquipamento(te1);
 
-        System.out.println("Divisão inserida com sucesso!"); // não é Tipo de Equipamento inserido com sucesso?
+        System.out.println("Tipo de equipamento inserido com sucesso!"); // não é Tipo de Equipamento inserido com sucesso?
     }
 
 
