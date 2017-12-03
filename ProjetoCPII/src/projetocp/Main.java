@@ -384,11 +384,7 @@ public class Main {
         } while (pos == -1);
 
         TipoEquipamento tipoEquipamento = grh.obterTiposEquipamento(pos);
-<<<<<<< HEAD:ProjetoCPII/src/projetocp/Main.java
 
-=======
-        
->>>>>>> 2a0aeece055fdf5be17316b14175ec10675a27ea:ProjectCPII_ruben_tiago/src/projetocp/Main.java
         do {
             System.out.println(grh.mostrarDivisao());
             designacaoDivisao = Consola.lerString("Indique a designação da Divisão em que o equipamento se encontra: ");
