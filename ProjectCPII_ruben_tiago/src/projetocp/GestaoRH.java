@@ -122,6 +122,13 @@ public class GestaoRH {
         return -1;
     }
 
+    public int pesquisarFuncionariosFuncao(String funcao) {
+        for (int i = 0; i < funcionariosOutros.size(); i++)
+           if (funcionariosOutros.get(i).getFuncao() == funcao)
+               return i;
+        return -1;
+    }
+
     public String mostrarFuncionarios(){
         StringBuilder str= new StringBuilder("");
         for (int i=0; i<funcionarios.size(); i++) {
