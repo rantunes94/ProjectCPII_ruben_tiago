@@ -2,11 +2,11 @@ package projetocp;
 
 import java.util.Calendar;
 
-public class FuncionarioTecnico { // apaguei o extends
+public class FuncionarioTecnicoNAOUSAR { // apaguei o extends
     private String username;
     private String password;
 
-    /* public FuncionarioTecnico(int nif, String nome, String morada, int telefone, String email, Calendar dataNascimento, String habilitacoes, String username, String password) {
+    /* public FuncionarioTecnicoNAOUSAR(int nif, String nome, String morada, int telefone, String email, Calendar dataNascimento, String habilitacoes, String username, String password) {
         super(nif, nome, morada, telefone, email, dataNascimento, habilitacoes);
         this.username = username;
         this.password = password;
