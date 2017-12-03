@@ -22,8 +22,13 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/projetocp/Main.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:ProjectCPII_ruben_tiago/.idea/workspace.xml
             <state relative-caret-position="349">
               <caret line="39" column="69" lean-forward="true" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
+=======
+            <state relative-caret-position="17">
+              <caret line="23" column="23" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+>>>>>>> 9dd11a0f2160f124b6212640653a2b39f249c860:ProjetoCPII/.idea/workspace.xml
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -31,6 +36,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD:ProjectCPII_ruben_tiago/.idea/workspace.xml
       <file leaf-file-name="Equipamento.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/projetocp/Equipamento.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -38,6 +44,42 @@
               <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+=======
+      <file leaf-file-name="Equipamento.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/projetocp/Equipamento.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="884">
+              <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Estado.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projetocp/Estado.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GestaoRH.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projetocp/GestaoRH.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+              <folding>
+                <marker date="1512261468098" expanded="true" signature="2289:2360" ph="{...}" />
+                <marker date="1512261468098" expanded="true" signature="2405:2621" ph="{...}" />
+                <marker date="1512261468098" expanded="true" signature="2674:2877" ph="{...}" />
+                <marker date="1512261468098" expanded="true" signature="2929:3105" ph="{...}" />
+                <marker date="1512261468098" expanded="true" signature="3142:3505" ph="{...}" />
+                <marker date="1512261468098" expanded="true" signature="3537:4072" ph="{...}" />
+>>>>>>> 9dd11a0f2160f124b6212640653a2b39f249c860:ProjetoCPII/.idea/workspace.xml
               </folding>
             </state>
           </provider>
@@ -68,15 +110,22 @@
       <file leaf-file-name="Funcionario.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/projetocp/Funcionario.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:ProjectCPII_ruben_tiago/.idea/workspace.xml
             <state relative-caret-position="425">
               <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="221">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+>>>>>>> 9dd11a0f2160f124b6212640653a2b39f249c860:ProjetoCPII/.idea/workspace.xml
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD:ProjectCPII_ruben_tiago/.idea/workspace.xml
       <file leaf-file-name="FuncionarioOutros.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/projetocp/FuncionarioOutros.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -85,6 +134,14 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="FuncionarioTecnicoNAOUSAR.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projetocp/FuncionarioTecnicoNAOUSAR.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+              <folding />
+>>>>>>> 9dd11a0f2160f124b6212640653a2b39f249c860:ProjetoCPII/.idea/workspace.xml
             </state>
           </provider>
         </entry>
@@ -96,7 +153,10 @@
       <list>
         <option value="Class" />
         <option value="Enum" />
+<<<<<<< HEAD:ProjectCPII_ruben_tiago/.idea/workspace.xml
         <option value="Interface" />
+=======
+>>>>>>> 9dd11a0f2160f124b6212640653a2b39f249c860:ProjetoCPII/.idea/workspace.xml
       </list>
     </option>
   </component>
@@ -119,9 +179,19 @@
         <option value="$PROJECT_DIR$/src/projetocp/Anos.java" />
         <option value="$PROJECT_DIR$/src/projetocp/Funcionario.java" />
         <option value="$PROJECT_DIR$/src/projetocp/FuncionarioMedico.java" />
+<<<<<<< HEAD:ProjectCPII_ruben_tiago/.idea/workspace.xml
         <option value="$PROJECT_DIR$/src/projetocp/Main.java" />
         <option value="$PROJECT_DIR$/src/projetocp/GestaoRH.java" />
         <option value="$PROJECT_DIR$/src/projetocp/FuncionarioOutros.java" />
+=======
+        <option value="$PROJECT_DIR$/src/projetocp/FuncionarioOutros.java" />
+        <option value="$PROJECT_DIR$/src/projetocp/GestaoRH.java" />
+        <option value="$PROJECT_DIR$/src/projetocp/Main.java" />
+        <option value="$PROJECT_DIR$/src/projetocp/Estado.java" />
+        <option value="$PROJECT_DIR$/src/projetocp/Equipamento.java" />
+        <option value="$PROJECT_DIR$/src/projetocp/FuncionarioTecnico.java" />
+        <option value="$PROJECT_DIR$/src/projetocp/FuncionarioTecnicoNAOUSAR.java" />
+>>>>>>> 9dd11a0f2160f124b6212640653a2b39f249c860:ProjetoCPII/.idea/workspace.xml
       </list>
     </option>
   </component>
@@ -146,9 +216,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD:ProjectCPII_ruben_tiago/.idea/workspace.xml
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+=======
+>>>>>>> 9dd11a0f2160f124b6212640653a2b39f249c860:ProjetoCPII/.idea/workspace.xml
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -177,11 +250,18 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD:ProjectCPII_ruben_tiago/.idea/workspace.xml
       <pane id="Scratches" />
+=======
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+>>>>>>> 9dd11a0f2160f124b6212640653a2b39f249c860:ProjetoCPII/.idea/workspace.xml
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/ProjectCPII_ruben_tiago/ProjetoCPII" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -275,7 +355,12 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD:ProjectCPII_ruben_tiago/.idea/workspace.xml
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14166667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+>>>>>>> 9dd11a0f2160f124b6212640653a2b39f249c860:ProjetoCPII/.idea/workspace.xml
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -288,7 +373,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -301,10 +385,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD:ProjectCPII_ruben_tiago/.idea/workspace.xml
     <entry file="file://$PROJECT_DIR$/src/projetocp/FuncionarioOutros.java" />
     <entry file="file://$PROJECT_DIR$/src/projetocp/TipoEquipamento.java" />
     <entry file="file://$PROJECT_DIR$/src/projetocp/Equipamento.java" />
     <entry file="file://$PROJECT_DIR$/src/projetocp/FuncionarioTecnicoTESTE.java" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/projetocp/FuncionarioMedico.java" />
+    <entry file="file://$PROJECT_DIR$/src/projetocp/FuncionarioOutros.java" />
+    <entry file="file://$PROJECT_DIR$/src/projetocp/TipoEquipamento.java" />
+    <entry file="file://$PROJECT_DIR$/src/projetocp/Equipamento.java" />
+    <entry file="file://$PROJECT_DIR$/src/projetocp/FuncionarioTecnicoNAOUSAR.java" />
+>>>>>>> 9dd11a0f2160f124b6212640653a2b39f249c860:ProjetoCPII/.idea/workspace.xml
     <entry file="file://$PROJECT_DIR$/src/projetocp/Avaria.java" />
     <entry file="file://$PROJECT_DIR$/src/projetocp/GestaoRH.java" />
     <entry file="file://$PROJECT_DIR$/src/projetocp/Main.java">
@@ -524,6 +616,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD:ProjectCPII_ruben_tiago/.idea/workspace.xml
     <entry file="file://$PROJECT_DIR$/src/projetocp/Divisao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
@@ -536,6 +629,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1598">
           <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/projetocp/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="23" column="23" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+>>>>>>> 9dd11a0f2160f124b6212640653a2b39f249c860:ProjetoCPII/.idea/workspace.xml
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -544,9 +643,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/projetocp/Anos.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:ProjectCPII_ruben_tiago/.idea/workspace.xml
         <state relative-caret-position="153">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
+=======
+        <state relative-caret-position="697">
+          <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <folding>
+            <marker date="1512261468098" expanded="true" signature="2289:2360" ph="{...}" />
+            <marker date="1512261468098" expanded="true" signature="2405:2621" ph="{...}" />
+            <marker date="1512261468098" expanded="true" signature="2674:2877" ph="{...}" />
+            <marker date="1512261468098" expanded="true" signature="2929:3105" ph="{...}" />
+            <marker date="1512261468098" expanded="true" signature="3142:3505" ph="{...}" />
+            <marker date="1512261468098" expanded="true" signature="3537:4072" ph="{...}" />
+          </folding>
+>>>>>>> 9dd11a0f2160f124b6212640653a2b39f249c860:ProjetoCPII/.idea/workspace.xml
         </state>
       </provider>
     </entry>
@@ -578,6 +690,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD:ProjectCPII_ruben_tiago/.idea/workspace.xml
     <entry file="file://$PROJECT_DIR$/src/projetocp/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
@@ -592,6 +705,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/projetocp/Estado.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetocp/FuncionarioOutros.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetocp/FuncionarioTecnicoNAOUSAR.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+          <folding />
+>>>>>>> 9dd11a0f2160f124b6212640653a2b39f249c860:ProjetoCPII/.idea/workspace.xml
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetocp/Equipamento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
