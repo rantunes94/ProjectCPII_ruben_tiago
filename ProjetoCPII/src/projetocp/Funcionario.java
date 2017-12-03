@@ -22,6 +22,7 @@ public class Funcionario implements Serializable {
         this.habilitacoes = habilitacoes;
     }
 
+
     public int getNif() {
         return nif;
     }

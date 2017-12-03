@@ -13,7 +13,7 @@ public class Main {
     public static SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
         int opcao, opcaoSubMenu;
 
         grh.lerFicheiro();
@@ -21,8 +21,7 @@ public class Main {
         do {
             opcao = menu();
             switch (opcao) {
-                case 1:
-                {
+                case 1: {
 
                     do {
                         opcaoSubMenu = menuFuncionario();
@@ -37,9 +36,10 @@ public class Main {
                                     System.err.println("Ainda não foram inseridos funcionários!");
                                 break;
                             case 3:
-                                if (grh.getTotalFuncionarios() > 0)
-                                    System.out.println(grh.mostrarFuncionarios()); //o to string esta a aparecer mal nao sei porque
-                                else
+                                if (grh.getTotalFuncionarios() > 0) {
+                                    System.out.println(grh.mostrarFuncionariosMedicos());
+                                    System.out.println(grh.mostrarFuncionariosOutros());
+                                } else
                                     System.err.println("Ainda não foram inseridos funcionários!");
                                 break;
                             case 4:
@@ -59,10 +59,9 @@ public class Main {
 
                 }
 
-                    break;
+                break;
 
-                case 2:
-                {
+                case 2: {
 
                     do {
                         opcaoSubMenu = menuDivisão();
@@ -87,9 +86,8 @@ public class Main {
 
                 }
 
-                    break;
-                case 3:
-                {
+                break;
+                case 3: {
 
                     do {
                         opcaoSubMenu = menuTiposEquipamento();
@@ -116,14 +114,13 @@ public class Main {
 
 
                 break;
-                case 4:
-                {
+                case 4: {
 
                     do {
                         opcaoSubMenu = menuEquipamentos();
                         switch (opcaoSubMenu) {
                             case 1:
-
+                                criarEquipamento();
                                 break;
                             case 2:
 
@@ -145,8 +142,7 @@ public class Main {
 
 
                 break;
-                case 5:
-                {
+                case 5: {
 
                     do {
                         opcaoSubMenu = menuAvarias();
@@ -174,8 +170,7 @@ public class Main {
 
 
                 break;
-                case 6:
-                {
+                case 6: {
 
                     do {
                         opcaoSubMenu = menuEstatisticas();
@@ -236,7 +231,7 @@ public class Main {
 
         System.out.println();
         System.out.println("1 - Inserir Funcionário"); // criar sub menus para cada tipo de funcionario OU printf em que dizemos escolha a opcao 1,2,3
-                                                        // ter um método para verificar que tipo é consoante o numero de forma  evitar codigo
+        // ter um método para verificar que tipo é consoante o numero de forma  evitar codigo
         System.out.println("2 - Alterar Funcionário");
         System.out.println("3 - Consultar Funcionário");
         System.out.println("4 - Eliminar Funcionário");
@@ -341,8 +336,78 @@ public class Main {
 
         grh.adicionarTipoEquipamento(te1);
 
-        System.out.println("Tipo de equipamento inserido com sucesso!"); 
+        System.out.println("Tipo de equipamento inserido com sucesso!");
     }
+
+    public static void criarEquipamento() {
+        String descricao, designacaoDivisao;
+        int numtipoEquipamento;
+        Funcionario funcionarioTecnico;
+        Double custo;
+        int numSerie, nif;
+        int pos;
+        Equipamento e1;
+        String funcao = "TESTE";
+
+        do {
+            nif = Consola.lerInt("Indique o nif do Funcionário: ", 100000000, 999999999);
+            pos = grh.pesquisarFuncionarios(nif);
+            if (pos == -1)
+                System.err.println("Funcionario não existe!");
+        } while (pos == -1);
+
+        do {
+
+            pos = grh.pesquisarFuncionariosFuncao(funcao);
+            if (funcao.equalsIgnoreCase("Técnico")) {
+                System.out.println("equipamento inserido com sucesso!");
+            } else
+                System.out.println("Este funcionário não é Técnico!");
+
+
+        } while (pos == -1);
+
+        funcionarioTecnico = grh.obterFuncionario(pos);
+
+        //numInv e dataInventariacao estao na grh no metodo adicionarEquipamentos
+        descricao = Consola.lerString("Indique a descrição do Equipamento: ");
+        numSerie = Consola.lerInt("Indique o número de série do equipamento: ", 0, 999999999);
+        custo = Consola.lerDouble("Indique o custo do equipamento: ", 0, 999999999);
+
+        do {
+            System.out.println(grh.mostrarTipoEquipamentos());
+            numtipoEquipamento = Consola.lerInt("Indique o tipo do equipamento: ", 0, 9999999);
+
+            pos = grh.pesquisarTipoEquipamento(numtipoEquipamento);
+            if (pos == -1)
+                System.err.println("Tipo de equipamento não existe");
+        } while (pos == -1);
+
+        TipoEquipamento tipoEquipamento = grh.obterTiposEquipamento(pos);
+
+        do {
+            System.out.println(grh.mostrarDivisao());
+            designacaoDivisao = Consola.lerString("Indique a designação da Divisão em que o equipamento se encontra: ");
+
+            pos = grh.pesquisarDivisao(designacaoDivisao);
+            if (pos == -1)
+                System.err.println("Divisão não existe");
+        } while (pos == -1);
+
+        Divisao divisao = grh.obterDivisao(pos);
+        Equipamento e = grh.obterEquipamento(pos);
+        e.setDivisao(divisao);
+        /*ir a divisao , numero++
+        d.setNumEquipamentos(d.getNumEquipamentos()+1);*/
+
+        e1 = new Equipamento(descricao, numSerie, tipoEquipamento, custo, funcionarioTecnico);
+
+        grh.adicionarEquipamento(e1);
+    }
+
+
+
+
 
 
 
@@ -367,7 +432,8 @@ public class Main {
         int nif, telefone,tipo, pos;
         String nome,morada,email,habilitacoes, dataN, especialidade,seccaoTrabalho,username,password, funcao;
         Calendar dataNascimento = new GregorianCalendar();
-        Funcionario f1;
+        FuncionarioMedico f1;
+        FuncionarioOutros f2;
         int errodn = 0;
         //validação a ver se o funcionario que criamos ja existe ou nao
         do {
@@ -415,7 +481,7 @@ public class Main {
 
             f1 = new FuncionarioMedico(nif,nome,morada,telefone,email,dataNascimento,habilitacoes,especialidade,seccaoTrabalho);
 
-            grh.adicionarFuncionario(f1);
+            grh.adicionarFuncionarioMedico(f1);
             System.out.println("Funcionário inserido com sucesso!");
         }
         if(tipo==2){
@@ -423,16 +489,16 @@ public class Main {
             password = Consola.lerString("Indique a password do técnico: ");
 
             funcao=("Técnico");
-            f1 = new FuncionarioOutros(nif,nome,morada,telefone,email,dataNascimento,habilitacoes,funcao,username,password);
+            f2 = new FuncionarioOutros(nif,nome,morada,telefone,email,dataNascimento,habilitacoes,funcao,username,password);
 
-            grh.adicionarFuncionario(f1);
+            grh.adicionarFuncionarioOutros(f2);
             System.out.println("Funcionário inserido com sucesso!");
         } if(tipo==3){
             funcao = Consola.lerString("Indique a função do Funcionário: ");
 
-            f1 = new FuncionarioOutros(nif,nome,morada,telefone,email,dataNascimento,habilitacoes,funcao);
+            f2 = new FuncionarioOutros(nif,nome,morada,telefone,email,dataNascimento,habilitacoes,funcao);
 
-            grh.adicionarFuncionario(f1);
+            grh.adicionarFuncionarioOutros(f2);
             System.out.println("Funcionário inserido com sucesso!");
         }
 
@@ -473,13 +539,13 @@ public class Main {
                 System.out.println("Alteração feita com sucesso!");
             }
 
-                if(opcao==3) {
+            if(opcao==3) {
 
-                    novoTelefone = Consola.lerInt("Indique o novo telefone do Funcionário: ", 100000000, 999999999);
-                    novaMorada = Consola.lerString("Indique a nova morada do Funcionário: ");
-                    grh.alterarFuncionario(novoTelefone, novaMorada, pos);
-                    System.out.println("Alteração feita com sucesso!");
-                }
+                novoTelefone = Consola.lerInt("Indique o novo telefone do Funcionário: ", 100000000, 999999999);
+                novaMorada = Consola.lerString("Indique a nova morada do Funcionário: ");
+                grh.alterarFuncionario(novoTelefone, novaMorada, pos);
+                System.out.println("Alteração feita com sucesso!");
+            }
 
         } while (pos == -1);
 

@@ -1,8 +1,9 @@
 package projetocp;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
-public class FuncionarioMedico extends Funcionario {
+public class FuncionarioMedico extends Funcionario  implements Serializable{
     private String especialidade;
     private String seccaoTrabalho;
 
@@ -12,6 +13,8 @@ public class FuncionarioMedico extends Funcionario {
         this.especialidade = especialidade;
         this.seccaoTrabalho = seccaoTrabalho;
     }
+
+
 
     public String getEspecialidade() {
         return especialidade;
