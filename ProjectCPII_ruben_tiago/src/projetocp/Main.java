@@ -13,7 +13,7 @@ public class Main {
     public static SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
         int opcao, opcaoSubMenu;
 
         grh.lerFicheiro();
@@ -21,8 +21,7 @@ public class Main {
         do {
             opcao = menu();
             switch (opcao) {
-                case 1:
-                {
+                case 1: {
 
                     do {
                         opcaoSubMenu = menuFuncionario();
@@ -40,7 +39,7 @@ public class Main {
                                 if (grh.getTotalFuncionarios() > 0) {
                                     System.out.println(grh.mostrarFuncionariosMedicos());
                                     System.out.println(grh.mostrarFuncionariosOutros());
-                                }else
+                                } else
                                     System.err.println("Ainda não foram inseridos funcionários!");
                                 break;
                             case 4:
@@ -60,10 +59,9 @@ public class Main {
 
                 }
 
-                    break;
+                break;
 
-                case 2:
-                {
+                case 2: {
 
                     do {
                         opcaoSubMenu = menuDivisão();
@@ -88,9 +86,8 @@ public class Main {
 
                 }
 
-                    break;
-                case 3:
-                {
+                break;
+                case 3: {
 
                     do {
                         opcaoSubMenu = menuTiposEquipamento();
@@ -117,8 +114,7 @@ public class Main {
 
 
                 break;
-                case 4:
-                {
+                case 4: {
 
                     do {
                         opcaoSubMenu = menuEquipamentos();
@@ -146,8 +142,7 @@ public class Main {
 
 
                 break;
-                case 5:
-                {
+                case 5: {
 
                     do {
                         opcaoSubMenu = menuAvarias();
@@ -175,8 +170,7 @@ public class Main {
 
 
                 break;
-                case 6:
-                {
+                case 6: {
 
                     do {
                         opcaoSubMenu = menuEstatisticas();
@@ -237,7 +231,7 @@ public class Main {
 
         System.out.println();
         System.out.println("1 - Inserir Funcionário"); // criar sub menus para cada tipo de funcionario OU printf em que dizemos escolha a opcao 1,2,3
-                                                        // ter um método para verificar que tipo é consoante o numero de forma  evitar codigo
+        // ter um método para verificar que tipo é consoante o numero de forma  evitar codigo
         System.out.println("2 - Alterar Funcionário");
         System.out.println("3 - Consultar Funcionário");
         System.out.println("4 - Eliminar Funcionário");
@@ -342,60 +336,55 @@ public class Main {
 
         grh.adicionarTipoEquipamento(te1);
 
-        System.out.println("Tipo de equipamento inserido com sucesso!"); 
+        System.out.println("Tipo de equipamento inserido com sucesso!");
     }
 
-/*associar aluno ao curso é como associar a um equipamento, um tipo.
-ver isso no inseirAluno a última parte do Aluno a= new blabla.*/
-
-/*associar divisao a um equipamento
-
-pedir a designacao da divisao na MAIN( CONSOLA LER STRING , INDIQUE)
-int pos =gestao.pesquisarDivisao(designacao);
-divisao d = gestao.obterDivisao(pos);
-pedir o numero (de equipamento?), verificar se existe , pos=gestao.pesquisarEquipamento(numero);
-equipamento e= gestao.obterEquipamento(pos);
-e.setDivisao(d);
-ir a divisao , numero++
-d.setNumEquipamentos(d.getNumEquipamentos()+1);*/
-
-//Registar, associar divisão, consultar (por divisão) os equipamentos.
-
-/*Cada equipamento é caracterizado pelo número de inventário (único),
-data de inventariação, descrição, número de série, tipo de equipamento,
-divisão em que se encontra, estado (disponível, indisponível, abatido),
-funcionário técnico que o inventariou e custo. É necessário que também
-fique registado o número total de avarias em cada equipamento
- */
-
-    public static void criarEquipamento(){
-        String descricao,dataI,designacaoDivisao;
+    public static void criarEquipamento() {
+        String descricao, designacaoDivisao;
         int numtipoEquipamento;
         Funcionario funcionarioTecnico;
-        Calendar dataInventariacao = new GregorianCalendar();
         Double custo;
-        int numSerie;
-        int nif;
-        int pos=0;
-        int errodn = 0;
-        String funcao="TESTE";
+        int numSerie, nif;
+        int pos;
+        Equipamento e1;
+        String funcao = "TESTE";
+
+        do {
+            nif = Consola.lerInt("Indique o nif do Funcionário: ", 100000000, 999999999);
+            pos = grh.pesquisarFuncionarios(nif);
+            if (pos == -1)
+                System.err.println("Funcionario não existe!");
+        } while (pos == -1);
+
+        do {
+
+            pos = grh.pesquisarFuncionariosFuncao(funcao);
+            if (funcao.equalsIgnoreCase("Técnico")) {
+                System.out.println("equipamento inserido com sucesso!");
+            } else
+                System.out.println("Este funcionário não é Técnico!");
+
+
+        } while (pos == -1);
+
+        funcionarioTecnico = grh.obterFuncionario(pos);
 
         //numInv e dataInventariacao estao na grh no metodo adicionarEquipamentos
         descricao = Consola.lerString("Indique a descrição do Equipamento: ");
-        numSerie = Consola.lerInt("Indique o número de série do equipamento: ",0,999999999);
-
+        numSerie = Consola.lerInt("Indique o número de série do equipamento: ", 0, 999999999);
+        custo = Consola.lerDouble("Indique o custo do equipamento: ", 0, 999999999);
 
         do {
             System.out.println(grh.mostrarTipoEquipamentos());
-            numtipoEquipamento = Consola.lerInt("Indique o tipo do equipamento: ",0,9999999);
+            numtipoEquipamento = Consola.lerInt("Indique o tipo do equipamento: ", 0, 9999999);
 
             pos = grh.pesquisarTipoEquipamento(numtipoEquipamento);
             if (pos == -1)
                 System.err.println("Tipo de equipamento não existe");
-        }while(pos==-1);
+        } while (pos == -1);
 
         TipoEquipamento tipoEquipamento = grh.obterTiposEquipamento(pos);
-
+        
         do {
             System.out.println(grh.mostrarDivisao());
             designacaoDivisao = Consola.lerString("Indique a designação da Divisão em que o equipamento se encontra: ");
@@ -403,41 +392,21 @@ fique registado o número total de avarias em cada equipamento
             pos = grh.pesquisarDivisao(designacaoDivisao);
             if (pos == -1)
                 System.err.println("Divisão não existe");
-        }while(pos==-1);
+        } while (pos == -1);
 
         Divisao divisao = grh.obterDivisao(pos);
+        Equipamento e = grh.obterEquipamento(pos);
+        e.setDivisao(divisao);
+        /*ir a divisao , numero++
+        d.setNumEquipamentos(d.getNumEquipamentos()+1);*/
 
+        e1 = new Equipamento(descricao, numSerie, tipoEquipamento, custo, funcionarioTecnico);
 
-
-
-
-
-
-
-        do {
-            nif = Consola.lerInt("Indique o nif do Funcionário: ",100000000,999999999);
-            pos = grh.pesquisarFuncionarios(nif);
-            if (pos == -1)
-                System.err.println("Funcionario não existe!");
-        } while (pos == -1);
-
-
-        do {
-
-            pos = grh.pesquisarFuncionariosFuncao(funcao);
-            if(funcao.equalsIgnoreCase("Técnico")){
-                System.out.println("equipamento inserido com sucesso!");
-            }else
-                System.out.println("Este funcionário não é Técnico!");
-
-
-        } while (pos == -1);
-
-
-
-
-
+        grh.adicionarEquipamento(e1);
     }
+
+
+
 
 
 
