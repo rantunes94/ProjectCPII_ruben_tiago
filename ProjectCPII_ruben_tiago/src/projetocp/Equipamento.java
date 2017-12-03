@@ -18,7 +18,7 @@ public class Equipamento implements Serializable {
     // funcionario tecnico que o inventariou e custo do mesmo
     private double custo;
     private Funcionario funcionarioTecnico;
-    /////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////
     private int numTotalAvariasPorEquipamento; // qnd insiro uma avaria, tenho que ir a este campo e dizer que tenho uma avaria nesse equipamento
     private ArrayList<Avaria> avarias = new ArrayList<>();// metodo para add e mostrar
     private ArrayList<Reparacao> reparacaos = new ArrayList<>();// metodo para add e mostrar
