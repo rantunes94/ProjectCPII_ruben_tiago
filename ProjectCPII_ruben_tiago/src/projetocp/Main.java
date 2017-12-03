@@ -368,9 +368,9 @@ funcionário técnico que o inventariou e custo. É necessário que também
 fique registado o número total de avarias em cada equipamento
  */
 
-    public static void criarEquipamento() {
-        String descricao,dataI;
-        TipoEquipamento tipoEquipamento;
+    public static void criarEquipamento(){
+        String descricao,dataI,designacaoDivisao;
+        int numtipoEquipamento;
         Funcionario funcionarioTecnico;
         Calendar dataInventariacao = new GregorianCalendar();
         Double custo;
@@ -382,6 +382,33 @@ fique registado o número total de avarias em cada equipamento
 
         //numInv e dataInventariacao estao na grh no metodo adicionarEquipamentos
         descricao = Consola.lerString("Indique a descrição do Equipamento: ");
+        numSerie = Consola.lerInt("Indique o número de série do equipamento: ",0,999999999);
+
+
+        do {
+            System.out.println(grh.mostrarTipoEquipamentos());
+            numtipoEquipamento = Consola.lerInt("Indique o tipo do equipamento: ",0,9999999);
+
+            pos = grh.pesquisarTipoEquipamento(numtipoEquipamento);
+            if (pos == -1)
+                System.err.println("Tipo de equipamento não existe");
+        }while(pos==-1);
+
+        TipoEquipamento tipoEquipamento = grh.obterTiposEquipamento(pos);
+
+        do {
+            System.out.println(grh.mostrarDivisao());
+            designacaoDivisao = Consola.lerString("Indique a designação da Divisão em que o equipamento se encontra: ");
+
+            pos = grh.pesquisarDivisao(designacaoDivisao);
+            if (pos == -1)
+                System.err.println("Divisão não existe");
+        }while(pos==-1);
+
+        Divisao divisao = grh.obterDivisao(pos);
+
+
+
 
 
 

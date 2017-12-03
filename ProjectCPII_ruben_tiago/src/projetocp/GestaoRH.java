@@ -154,6 +154,16 @@ public class GestaoRH {
         return str.toString();
     }
 
+    public String mostrarDivisao(){
+        StringBuilder str= new StringBuilder("");
+        for (int i=0; i<divisoes.size(); i++) {
+            str.append(divisoes.get(i)).append("\n");
+        }
+        return str.toString();
+    }
+
+
+
     public int pesquisarTipoEquipamento(int numero){ // à partida nao vai ser necessario
         for (int i=0; i<tiposEquipamento.size(); i++)
             if (tiposEquipamento.get(i).getNumero()==numero)

@@ -7,8 +7,11 @@ import java.util.Calendar;
 public class Equipamento implements Serializable {
     private int numeroInventario; // unico
     private Calendar dataInventariacao;
+    private String descricao;
+    private int numSerie;
     private TipoEquipamento tipoEquipamento;
     private Divisao divisao;
+
 
     private Estado estado; // este estado é um ENUM ,  NOTA : este campo não é para ser pedido ao utilizador , no acto da adição deve ficar DISPONIVEL
 
@@ -24,8 +27,10 @@ public class Equipamento implements Serializable {
     //divisao e estado nao entram no construtor
 
 
-    public Equipamento(Calendar dataInventariacao, TipoEquipamento tipoEquipamento, double custo, Funcionario funcionarioTecnico) {
+    public Equipamento(Calendar dataInventariacao, String descricao,int numSerie, TipoEquipamento tipoEquipamento, double custo, Funcionario funcionarioTecnico) {
         this.dataInventariacao = dataInventariacao;
+        this.descricao = descricao;
+        this.numSerie = numSerie;
         this.tipoEquipamento = tipoEquipamento;
         this.custo = custo;
         this.funcionarioTecnico = funcionarioTecnico;
