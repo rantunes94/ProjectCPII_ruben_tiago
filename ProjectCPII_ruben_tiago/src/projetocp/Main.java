@@ -37,9 +37,10 @@ public class Main {
                                     System.err.println("Ainda não foram inseridos funcionários!");
                                 break;
                             case 3:
-                                if (grh.getTotalFuncionarios() > 0)
-                                    System.out.println(grh.mostrarFuncionarios()); //o to string esta a aparecer mal nao sei porque
-                                else
+                                if (grh.getTotalFuncionarios() > 0) {
+                                    System.out.println(grh.mostrarFuncionariosMedicos());
+                                    System.out.println(grh.mostrarFuncionariosOutros());
+                                }else
                                     System.err.println("Ainda não foram inseridos funcionários!");
                                 break;
                             case 4:
@@ -123,7 +124,7 @@ public class Main {
                         opcaoSubMenu = menuEquipamentos();
                         switch (opcaoSubMenu) {
                             case 1:
-
+                                criarEquipamento();
                                 break;
                             case 2:
 
@@ -344,6 +345,74 @@ public class Main {
         System.out.println("Tipo de equipamento inserido com sucesso!"); 
     }
 
+/*associar aluno ao curso é como associar a um equipamento, um tipo.
+ver isso no inseirAluno a última parte do Aluno a= new blabla.*/
+
+/*associar divisao a um equipamento
+
+pedir a designacao da divisao na MAIN( CONSOLA LER STRING , INDIQUE)
+int pos =gestao.pesquisarDivisao(designacao);
+divisao d = gestao.obterDivisao(pos);
+pedir o numero (de equipamento?), verificar se existe , pos=gestao.pesquisarEquipamento(numero);
+equipamento e= gestao.obterEquipamento(pos);
+e.setDivisao(d);
+ir a divisao , numero++
+d.setNumEquipamentos(d.getNumEquipamentos()+1);*/
+
+//Registar, associar divisão, consultar (por divisão) os equipamentos.
+
+/*Cada equipamento é caracterizado pelo número de inventário (único),
+data de inventariação, descrição, número de série, tipo de equipamento,
+divisão em que se encontra, estado (disponível, indisponível, abatido),
+funcionário técnico que o inventariou e custo. É necessário que também
+fique registado o número total de avarias em cada equipamento
+ */
+
+    public static void criarEquipamento() {
+        String descricao,dataI;
+        TipoEquipamento tipoEquipamento;
+        Funcionario funcionarioTecnico;
+        Calendar dataInventariacao = new GregorianCalendar();
+        Double custo;
+        int numSerie;
+        int nif;
+        int pos=0;
+        int errodn = 0;
+        String funcao="TESTE";
+
+        //numInv e dataInventariacao estao na grh no metodo adicionarEquipamentos
+        descricao = Consola.lerString("Indique a descrição do Equipamento: ");
+
+
+
+
+
+        do {
+            nif = Consola.lerInt("Indique o nif do Funcionário: ",100000000,999999999);
+            pos = grh.pesquisarFuncionarios(nif);
+            if (pos == -1)
+                System.err.println("Funcionario não existe!");
+        } while (pos == -1);
+
+
+        do {
+
+            pos = grh.pesquisarFuncionariosFuncao(funcao);
+            if(funcao.equalsIgnoreCase("Técnico")){
+                System.out.println("equipamento inserido com sucesso!");
+            }else
+                System.out.println("Este funcionário não é Técnico!");
+
+
+        } while (pos == -1);
+
+
+
+
+
+    }
+
+
 
 
     public static void consultarDivisao(){
@@ -367,7 +436,8 @@ public class Main {
         int nif, telefone,tipo, pos;
         String nome,morada,email,habilitacoes, dataN, especialidade,seccaoTrabalho,username,password, funcao;
         Calendar dataNascimento = new GregorianCalendar();
-        Funcionario f1;
+        FuncionarioMedico f1;
+        FuncionarioOutros f2;
         int errodn = 0;
         //validação a ver se o funcionario que criamos ja existe ou nao
         do {
@@ -415,7 +485,7 @@ public class Main {
 
             f1 = new FuncionarioMedico(nif,nome,morada,telefone,email,dataNascimento,habilitacoes,especialidade,seccaoTrabalho);
 
-            grh.adicionarFuncionario(f1);
+            grh.adicionarFuncionarioMedico(f1);
             System.out.println("Funcionário inserido com sucesso!");
         }
         if(tipo==2){
@@ -423,16 +493,16 @@ public class Main {
             password = Consola.lerString("Indique a password do técnico: ");
 
             funcao=("Técnico");
-            f1 = new FuncionarioOutros(nif,nome,morada,telefone,email,dataNascimento,habilitacoes,funcao,username,password);
+            f2 = new FuncionarioOutros(nif,nome,morada,telefone,email,dataNascimento,habilitacoes,funcao,username,password);
 
-            grh.adicionarFuncionario(f1);
+            grh.adicionarFuncionarioOutros(f2);
             System.out.println("Funcionário inserido com sucesso!");
         } if(tipo==3){
             funcao = Consola.lerString("Indique a função do Funcionário: ");
 
-            f1 = new FuncionarioOutros(nif,nome,morada,telefone,email,dataNascimento,habilitacoes,funcao);
+            f2 = new FuncionarioOutros(nif,nome,morada,telefone,email,dataNascimento,habilitacoes,funcao);
 
-            grh.adicionarFuncionario(f1);
+            grh.adicionarFuncionarioOutros(f2);
             System.out.println("Funcionário inserido com sucesso!");
         }
 
